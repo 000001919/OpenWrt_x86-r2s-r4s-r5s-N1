@@ -358,3 +358,21 @@ jobs:
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_KIDDIN9 }}
+名称：GitHub Actions Demo
+运行名称：${{ github.actor }} 正在测试 GitHub Actions 🚀
+开启：[推]
+工作：
+  探索-GitHub-Actions：
+    运行于：ubuntu-latest
+    脚步：
+      - run: echo "🎉 该作业由 ${{ github.event_name }} 事件自动触发。"
+      - 运行：echo “🐧 此作业现在正在 GitHub 托管的 ${{ runner.os }} 服务器上运行！”
+      - 运行：echo “🔎 您的分支名称是 ${{ github.ref }}，您的存储库是 ${{ github.repository }}。”
+      - 名称：检出存储库代码
+        用途：actions/checkout@v4
+      - run: echo "💡 ${{ github.repository }} 存储库已克隆到运行器。"
+      - 运行：echo“🖥️工作流程现在已准备好在运行器上测试您的代码。”
+      - 名称：列出存储库中的文件
+        运行：|
+          ls ${{ github.workspace }}
+      - 运行：echo “🍏 这项工作的状态为${{ job.status }}。”
